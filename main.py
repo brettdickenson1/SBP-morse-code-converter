@@ -29,7 +29,7 @@ def generate_morse_code():
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
-window.title("Password Manager")
+window.title("Morse Code Converter")
 window.config(padx=50, pady=50)
 canvas = Canvas(width=250, height=300)
 canvas.grid(row=0, column=1)
@@ -49,7 +49,7 @@ password_entry.focus()
 
 
 # Buttons
-generate_password_button = Button(text="Generate Password", command=generate_morse_code)
+generate_password_button = Button(text="Generate Morse Code", command=generate_morse_code)
 generate_password_button.grid(row=3, column=2)
 
 window.mainloop()
