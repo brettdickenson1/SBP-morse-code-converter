@@ -26,6 +26,10 @@ def generate_morse_code():
             print(mystring)
             canvas.itemconfig(card_title, text=mystring, fill="black")
 
+
+def reset_code():
+    canvas.itemconfig(card_title, text='Morse code', fill="black")
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -34,8 +38,8 @@ window.config(padx=50, pady=50)
 canvas = Canvas(width=250, height=300)
 canvas.grid(row=0, column=1)
 card_front_img = PhotoImage(file="images/morsecode.png")
-card_background = canvas.create_image(120, 70, image=card_front_img)
-card_title = canvas.create_text(120, 150, text="Morse Code", font=("Ariel", 40, "italic"))
+card_background = canvas.create_image(140, 70, image=card_front_img)
+card_title = canvas.create_text(140, 150, text="Morse Code", font=("Ariel", 40, "italic"))
 card_word = canvas.create_text(400, 263, text="", font=("Ariel", 60, "bold"))
 
 #Labels
@@ -51,5 +55,7 @@ password_entry.focus()
 # Buttons
 generate_password_button = Button(text="Generate Morse Code", command=generate_morse_code)
 generate_password_button.grid(row=3, column=2)
+generate_password_button = Button(text="Reset code", command=reset_code)
+generate_password_button.grid(row=4, column=2)
 
 window.mainloop()
